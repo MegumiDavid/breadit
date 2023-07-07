@@ -30,7 +30,14 @@ export default function UserAuthForm(props: UserAuthFormProps) {
 
   return (
     <div className={cn('flex justify-center', props.className)} {...props}>
-      <Button onClick={loginWithGoogle} size="sm" isLoading={isLoading} className="w-full">
+      <Button
+        isLoading={isLoading}
+        type="button"
+        size="sm"
+        className="w-full"
+        onClick={loginWithGoogle}
+        disabled={isLoading}
+      >
         {isLoading ? null : <Icons.google className="h-4 w-4 mr-2" />}
         Google
       </Button>
